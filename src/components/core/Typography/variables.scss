@@ -1,0 +1,39 @@
+@use "../../../styles/utils.scss";
+
+.Block {
+  @include utils.layer {
+    %sizeDefaults {
+      @include moduler-scale(8, 0);
+    }
+    &--xs {
+      @include moduler-scale(10, 0);
+    }
+    &--sm {
+      @include moduler-scale(9, 0);
+    }
+    &--md {
+      @extend %sizeDefaults;
+    }
+    &--lg {
+      @include moduler-scale(7, 1);
+    }
+    &--xl {
+      @include moduler-scale(6, 1);
+    }
+    &--2xl {
+      @include moduler-scale(5, 1);
+    }
+    &--3xl {
+      @include moduler-scale(4, 2);
+    }
+    &--4xl {
+      @include moduler-scale(3, 2);
+    }
+    &--5xl {
+      @include moduler-scale(2, 2);
+    }
+    &--6xl {
+      @include moduler-scale(1, 2);
+    }
+  }
+}
