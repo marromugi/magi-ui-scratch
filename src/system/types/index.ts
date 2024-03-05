@@ -1,5 +1,3 @@
-import { Token as MagiToken } from "magi-ui";
-
 export type Theme = "common" | "light" | "dark";
 
 type WithTheme<T = unknown> = {
@@ -123,7 +121,3 @@ export type NestedMostBottomKey<T extends object> = {
     ? `${Key}.${NestedKey<T[Key]>}`
     : `${Key}`;
 }[keyof T & (string | number)];
-
-export type ColorCode = NestedMostBottomKey<
-  MagiToken["color"]["common"]
->;

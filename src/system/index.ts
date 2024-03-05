@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 
 import prettier from "prettier";
 
@@ -32,11 +33,21 @@ const FORMAT: prettier.Options = {
   endOfLine: "lf",
 };
 
+export const defineConfig = <
+  ColorCode extends number,
+  Semantics extends string,
+>(
+  token: TokenBase<ColorCode, Semantics>,
+) => {
+  return token;
+};
+
 export const generateTypes = async <
   ColorCode extends number,
   Semantics extends string,
 >(
   tokens: TokenBase<ColorCode, Semantics>,
+  outDir: string = "./",
 ) => {
   const color = withType("Color", await generateColorType(tokens));
   const font = withType("Font", await generateFontType(tokens));
@@ -58,7 +69,10 @@ export const generateTypes = async <
     },
   );
 
-  fs.writeFileSync("./token.d.ts", formattedContent);
+  fs.writeFileSync(
+    path.resolve(outDir, "./token.d.ts"),
+    formattedContent,
+  );
 };
 
 export const generateCss = async <
@@ -66,6 +80,7 @@ export const generateCss = async <
   Semantics extends string,
 >(
   tokens: TokenBase<ColorCode, Semantics>,
+  outDir: string = "./",
 ) => {
   const css: string[] = [];
   css.push(await generateVariables(tokens));
@@ -94,5 +109,8 @@ export const generateCss = async <
     parser: "css",
   });
 
-  fs.writeFileSync("./magi-ui.css", formattedCss);
+  fs.writeFileSync(
+    path.resolve(outDir, "./magi-ui.css"),
+    formattedCss,
+  );
 };

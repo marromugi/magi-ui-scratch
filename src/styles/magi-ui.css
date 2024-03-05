@@ -28,7 +28,7 @@
   --mg-space-sm: 14;
   --mg-space-md: 16;
   --mg-space-lg: 18;
-  --mg-space-xl: 20;
+  --mg-space-xl: 22;
 }
 
 @media (prefers-color-scheme: light) {

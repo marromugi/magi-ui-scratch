@@ -1,0 +1,53 @@
+@use "./utils.scss";
+
+$--mg-font-size-xxs: calc(1em * 8 / 11);
+$--mg-font-size-xs: calc(1em * 8 / 10);
+$--mg-font-size-sm: calc(1em * 8 / 9);
+$--mg-font-size-md: calc(1em * 8 / 8);
+$--mg-font-size-lg: calc(1em * 8 / 7);
+$--mg-font-size-xl: calc(1em * 8 / 6);
+$--mg-font-size-2xl: calc(1em * 8 / 5);
+$--mg-font-size-3xl: calc(1em * 8 / 4);
+$--mg-font-size-4xl: calc(1em * 8 / 3);
+$--mg-font-size-5xl: calc(1em * 8 / 2);
+$--mg-font-size-6xl: calc(1em * 8 / 1);
+
+$--mg-space-xxs: calc(1em * (32 + 8 * 0) / 32);
+$--mg-space-xs: calc(1em * (32 + 8 * 0) / 32);
+$--mg-space-sm: calc(1em * (32 + 8 * 0) / 32);
+$--mg-space-md: calc(1em * (32 + 8 * 1) / 32);
+$--mg-space-lg: calc(1em * (32 + 8 * 1) / 32);
+$--mg-space-xl: calc(1em * (32 + 8 * 2) / 32);
+$--mg-space-2xl: calc(1em * (32 + 8 * 2) / 32);
+$--mg-space-3xl: calc(1em * (32 + 8 * 3) / 32);
+$--mg-space-4xl: calc(1em * (32 + 8 * 3) / 32);
+$--mg-space-5xl: calc(1em * (32 + 8 * 4) / 32);
+$--mg-space-6xl: calc(1em * (32 + 8 * 4) / 32);
+
+$--mg-font-family-base: ui-sans-serif, system-ui, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
+$--mg-font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman",
+  Times, serif;
+$--mg-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco,
+  Consolas, "Liberation Mono", "Courier New", monospace;
+
+$--mg-font-weight-thin: 100;
+$--mg-font-weight-extraLight: 200;
+$--mg-font-weight-light: 300;
+$--mg-font-weight-normal: 400;
+$--mg-font-weight-medium: 500;
+$--mg-font-weight-semibold: 600;
+$--mg-font-weight-bold: 700;
+$--mg-font-weight-black: 900;
+
+$--mg-shadow-xs: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+$--mg-shadow-sm: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+  drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+$--mg-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+  drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+$--mg-shadow-lg: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+  drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+$--mg-shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+  drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+$--mg-shadow-2xl: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));

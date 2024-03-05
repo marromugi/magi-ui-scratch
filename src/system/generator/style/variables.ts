@@ -19,8 +19,6 @@ export const generateVariables = async <
     `--${CLASSNAME_PREFIX}-`,
   );
 
-  console.log(variables);
-
   const content = [
     ":root {",
     generateVariableFileContentFromObject(variables),

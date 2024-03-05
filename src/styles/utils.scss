@@ -1,0 +1,54 @@
+@mixin layer {
+  @layer mg.components {
+    @content;
+  }
+}
+
+/* font */
+@mixin font-size($size) {
+  font-size: var(--mg-font-#{$size});
+  line-height: var(--mg-leading-#{$size});
+}
+
+@mixin font-family($family) {
+  font-family: var(--mg-font-family-#{$family});
+}
+
+@mixin font-weight($weight) {
+  font-weight: var(--mg-font-weight-#{$weight});
+}
+
+/* color */
+@mixin font-color($color) {
+  color: var(--mg-color-#{$color});
+}
+
+@mixin bg-color($color) {
+  background-color: var(--mg-color-#{$color});
+}
+
+@mixin border-color($color) {
+  border-color: var(--mg-color-#{$color});
+}
+
+/* radius */
+@mixin border-radius($size) {
+  border-radius: var(--mg-radius-#{$size});
+}
+
+/* shadow */
+@mixin shadow($size) {
+  filter: var(--mg-shadow-#{$size});
+}
+
+/* space */
+@mixin space($space, $size) {
+  #{$space}: var(--mg-space-#{$size});
+}
+
+/* utils */
+
+@mixin moduler-scale($ratio, $space) {
+  font-size: calc(1rem * 8 / $ratio);
+  line-height: calc(1em * (32 + 8 * $space) / 32);
+}

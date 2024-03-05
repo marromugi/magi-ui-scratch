@@ -1,8 +1,6 @@
-import { describe, expect, test } from "vitest";
+import { defineConfig } from "@/system";
 
-import { generateCss, generateTypes } from ".";
-
-const DUMMY_TOKEN = {
+export default defineConfig({
   font: {
     size: {
       xs: "12px",
@@ -36,6 +34,7 @@ const DUMMY_TOKEN = {
         700: "#FFFFFF",
       },
       white: "#FFFFFF",
+      black: "#000000",
     },
     dark: {
       primary: {
@@ -63,18 +62,4 @@ const DUMMY_TOKEN = {
     lg: "18",
     xl: 22,
   },
-};
-
-describe("generateType", () => {
-  test("success to generate", async () => {
-    await generateTypes(DUMMY_TOKEN);
-    expect(true).toBe(true);
-  });
-});
-
-describe("generateCss", () => {
-  test("success to generate", async () => {
-    await generateCss(DUMMY_TOKEN);
-    expect(true).toBe(true);
-  });
 });
