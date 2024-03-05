@@ -1,6 +1,6 @@
 import { CLASSNAME_PREFIX } from "../../const";
 import { TokenBase } from "../../types";
-import { generateNestKeyAndValue } from "../../utils";
+import { generateNestKeyAndValue } from "../../utils/generator";
 
 const generateVariableFileContentFromObject = (obj: object) => {
   return Object.entries(obj)

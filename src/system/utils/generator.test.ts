@@ -1,7 +1,7 @@
 import { expect, describe, test } from "vitest";
 
 import { generateVariables } from "../generator/style";
-import { generateNestKeyAndValue } from "../utils";
+import { generateNestKeyAndValue } from "./generator";
 
 describe("generateNestKeyAndValue", () => {
   test("type: String", async () => {

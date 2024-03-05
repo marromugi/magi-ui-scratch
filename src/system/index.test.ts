@@ -1,6 +1,4 @@
-import { describe } from "node:test";
-
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 
 import { generateCss, generateTypes } from ".";
 

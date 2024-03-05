@@ -17,7 +17,11 @@ import {
   generateSpaceType,
 } from "./generator/types";
 import { TokenBase } from "./types";
-import { wrapToType, wrapToModule, withMediaQuery } from "./utils";
+import {
+  withType,
+  withModule,
+  withMediaQuery,
+} from "./utils/generator";
 
 const FORMAT: prettier.Options = {
   printWidth: 70,
@@ -34,15 +38,12 @@ export const generateTypes = async <
 >(
   tokens: TokenBase<ColorCode, Semantics>,
 ) => {
-  const color = wrapToType("Color", await generateColorType(tokens));
-  const font = wrapToType("Font", await generateFontType(tokens));
-  const shadow = wrapToType(
-    "Shadow",
-    await generateShadowType(tokens),
-  );
-  const space = wrapToType("Space", await generateSpaceType(tokens));
+  const color = withType("Color", await generateColorType(tokens));
+  const font = withType("Font", await generateFontType(tokens));
+  const shadow = withType("Shadow", await generateShadowType(tokens));
+  const space = withType("Space", await generateSpaceType(tokens));
 
-  const token = wrapToType("Token", [
+  const token = withType("Token", [
     "color: Color;",
     "font: Font;",
     "shadow: Shadow;",
@@ -50,7 +51,7 @@ export const generateTypes = async <
   ]);
 
   const formattedContent = await prettier.format(
-    wrapToModule([color, font, shadow, space, token]),
+    withModule([color, font, shadow, space, token]),
     {
       ...FORMAT,
       parser: "typescript",

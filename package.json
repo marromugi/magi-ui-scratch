@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
@@ -28,6 +29,7 @@
     "@testing-library/react": "^14.2.1",
     "@types/node": "^20.11.15",
     "@types/react": "^18.2.51",
+    "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@vitejs/plugin-react": "^4.2.1",
     "clsx": "^2.1.0",

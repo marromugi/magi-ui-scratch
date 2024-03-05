@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+const path = require("path");
+const { loadConfigFromFile, mergeConfig } = require("vite");
 
 const config: StorybookConfig = {
   stories: [
@@ -17,6 +19,26 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  async viteFinal(config, { configType }) {
+    console.log(path.resolve(__dirname, "../vitest.config.ts"));
+    const userConfig = await loadConfigFromFile(
+      path.resolve(__dirname, "../vitest.config.ts"),
+    );
+
+    return mergeConfig(config, {
+      ...userConfig,
+      // manually specify plugins to avoid conflict
+      plugins: [],
+      resolve: {
+        alias: [
+          {
+            find: "@",
+            replacement: path.resolve(__dirname, "../src"),
+          },
+        ],
+      },
+    });
   },
 };
 export default config;
