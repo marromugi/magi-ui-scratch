@@ -1,10 +1,7 @@
 import { TokenBase } from "../../types";
 
-export const generateShadowCss = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  shadow: NonNullable<TokenBase<ColorCode, Semantics>["shadow"]> = {},
+export const generateShadowCss = async (
+  shadow: NonNullable<TokenBase["shadow"]> = {},
 ) => {
   const content = Object.entries(shadow)
     .flatMap(([key]) => {

@@ -1,6 +1,10 @@
 import { ComponentProps } from "react";
 
-type TypographyElements = Extract<
+import { TYPOGRAPHY_VARIABLES } from "./const";
+
+import { VariantsType } from "@/types/util";
+
+export type TypographyElements = Extract<
   keyof JSX.IntrinsicElements,
   | "h1"
   | "h2"
@@ -23,4 +27,5 @@ type TypographyElements = Extract<
 
 export type TypographyProps<Element extends TypographyElements> = {
   as: Element;
-} & ComponentProps<Element>;
+} & ComponentProps<Element> &
+  VariantsType<typeof TYPOGRAPHY_VARIABLES>;

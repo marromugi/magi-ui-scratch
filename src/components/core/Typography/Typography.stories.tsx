@@ -1,9 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
 import { Typography } from "./Typography";
+
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Typography> = {
   component: Typography,
+  argTypes: {
+    size: {
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl"],
+      control: { type: "select" },
+    },
+  },
 };
 
 export default meta;
@@ -15,5 +21,5 @@ type Story = StoryObj<typeof Typography>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Typography />,
+  render: (args) => <Typography {...args} />,
 };

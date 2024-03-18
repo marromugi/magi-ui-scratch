@@ -6,17 +6,14 @@ type WithTheme<T = unknown> = {
   dark?: T;
 };
 
-type Color<T extends number, Semantics extends string> = {
-  [key in Semantics]:
-    | {
-        [key in T]: string;
-      }
-    | string;
+type Color = {
+  [key in string]:
+    | Partial<{
+        [key in number]: WithTheme<string>;
+      }>
+    | WithTheme<string>;
 };
-export type TokenBase<
-  ColorCode extends number,
-  Semantics extends string,
-> = {
+export type TokenBase = {
   font?: {
     // size: {
     //   xs?: string;
@@ -24,13 +21,13 @@ export type TokenBase<
     //   md?: string;
     //   lg?: string;
     // };
-    size?: Record<string, { [key in number]: string }>;
+    size?: Record<string | number, { [key in number]: string }>;
     // size?: Record<string, {
     //   size: string,
     //   line: string
     //   kerning: string
     //  }>;
-    family?: Record<string, string[]>;
+    family?: Record<string | number, string[]>;
     // family: {
     //   base: string[];
     // };
@@ -45,8 +42,10 @@ export type TokenBase<
     //   extrabold: 800;
     //   black: 900;
     // };
+    tracking?: Record<string | number, string>;
+    lineSpace?: Record<string | number, string>;
   };
-  color?: WithTheme<Color<ColorCode, Semantics>>;
+  color?: Color;
   // color: {
   //   gray: {
   //     100: string;
@@ -66,48 +65,11 @@ export type TokenBase<
   //   lg: string;
   //   full: string;
   // };
-  shadow?: Record<string, string>;
-  space?: Record<string, string | number>;
-};
-
-export type Token = Pick<
-  TokenBase<
-    900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100 | 50,
-    "primary"
-  >,
-  "color"
-> & {
-  font: {
-    size: {
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-    };
-    family: {
-      sans: string[];
-      serif: string[];
-      mono: string[];
-    };
-  };
-  shadow: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-  };
-  radius: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-  };
-  space: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-  };
+  shadow?: Record<string | number, string>;
+  space?: Record<string | number, string | number>;
+  radius?: Record<string | number, string | number>;
+  transition?: Record<string | number, string | number>;
+  timing?: Record<string | number, string | number>;
 };
 
 export type NestedKey<T extends object> = {

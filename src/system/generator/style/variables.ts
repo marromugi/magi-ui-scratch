@@ -8,12 +8,7 @@ const generateVariableFileContentFromObject = (obj: object) => {
     .join("\n");
 };
 
-export const generateVariables = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  token: TokenBase<ColorCode, Semantics>,
-) => {
+export const generateVariables = async (token: TokenBase) => {
   const variables = generateNestKeyAndValue(
     token,
     `--${CLASSNAME_PREFIX}-`,
@@ -22,6 +17,7 @@ export const generateVariables = async <
   const content = [
     ":root {",
     generateVariableFileContentFromObject(variables),
+    "font-kerning: none;",
     "}",
   ].join("\n");
 

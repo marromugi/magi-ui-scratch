@@ -42,9 +42,13 @@ export const withType = (name: string, lines: string[]) => {
 };
 
 export const withModule = (lines: string[]) => {
-  return [`declare module '${MODULE_NAME}' {`, ...lines, "};"].join(
-    "\n",
-  );
+  return [
+    `declare module '${MODULE_NAME}' {`,
+    ...lines,
+    "};",
+    'declare module "*.css";',
+    'declare module "*.scss";',
+  ].join("\n");
 };
 
 export const withMediaQuery = (

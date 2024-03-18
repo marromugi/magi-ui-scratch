@@ -1,0 +1,283 @@
+:root {
+  --mg-font-size-xs: 12px;
+  --mg-font-size-sm: 14px;
+  --mg-font-size-md: 16px;
+  --mg-font-size-lg: 20px;
+  --mg-font-family-base: "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --mg-font-family-mono: "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --mg-color-common-primary-700: #a0a0a0;
+  --mg-color-common-primary-800: #c0c0c0;
+  --mg-color-common-primary-900: #ffffff;
+  --mg-color-common-secondary-700: #ffffff;
+  --mg-color-common-secondary-800: #c0c0c0;
+  --mg-color-common-secondary-900: #ffffff;
+  --mg-color-common-white: #ffffff;
+  --mg-color-dark-primary-700: #a0a0a0;
+  --mg-color-dark-primary-800: #c0c0c0;
+  --mg-color-dark-primary-900: #ffffff;
+  --mg-color-dark-secondary-700: #a0a0a0;
+  --mg-color-dark-secondary-800: #c0c0c0;
+  --mg-color-dark-secondary-900: #ffffff;
+  --mg-color-dark-white: #ffffff;
+  --mg-shadow-sm: aa;
+  --mg-shadow-md: asfa;
+  --mg-shadow-lg: gsdg;
+  --mg-shadow-xl: gg;
+  --mg-space-sm: 14;
+  --mg-space-md: 16;
+  --mg-space-lg: 18;
+  --mg-space-xl: 22;
+}
+
+@media (prefers-color-scheme: light) {
+  .mg-text-color-common {
+    color: var(--mg-color-common-light);
+  }
+  .mg-bg-color-common {
+    background-color: var(--mg-color-common-light);
+  }
+  .mg-border-color-common {
+    border-color: var(--mg-color-common-light);
+  }
+  .mg-fill-color-common {
+    fill: var(--mg-color-common-light);
+  }
+  .mg-stroke-color-common {
+    stroke: var(--mg-color-common-light);
+  }
+  .mg-text-color-dark {
+    color: var(--mg-color-dark-light);
+  }
+  .mg-bg-color-dark {
+    background-color: var(--mg-color-dark-light);
+  }
+  .mg-border-color-dark {
+    border-color: var(--mg-color-dark-light);
+  }
+  .mg-fill-color-dark {
+    fill: var(--mg-color-dark-light);
+  }
+  .mg-stroke-color-dark {
+    stroke: var(--mg-color-dark-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .mg-text-color-common {
+    color: var(--mg-color-common-dark);
+  }
+  .mg-bg-color-common {
+    background-color: var(--mg-color-common-dark);
+  }
+  .mg-border-color-common {
+    border-color: var(--mg-color-common-dark);
+  }
+  .mg-fill-color-common {
+    fill: var(--mg-color-common-dark);
+  }
+  .mg-stroke-color-common {
+    stroke: var(--mg-color-common-dark);
+  }
+  .mg-text-color-dark {
+    color: var(--mg-color-dark-dark);
+  }
+  .mg-bg-color-dark {
+    background-color: var(--mg-color-dark-dark);
+  }
+  .mg-border-color-dark {
+    border-color: var(--mg-color-dark-dark);
+  }
+  .mg-fill-color-dark {
+    fill: var(--mg-color-dark-dark);
+  }
+  .mg-stroke-color-dark {
+    stroke: var(--mg-color-dark-dark);
+  }
+}
+
+.mg-text-color-common {
+  color: var(--mg-color-common-common);
+}
+.mg-bg-color-common {
+  background-color: var(--mg-color-common-common);
+}
+.mg-border-color-common {
+  border-color: var(--mg-color-common-common);
+}
+.mg-fill-color-common {
+  fill: var(--mg-color-common-common);
+}
+.mg-stroke-color-common {
+  stroke: var(--mg-color-common-common);
+}
+.mg-text-color-dark {
+  color: var(--mg-color-dark-common);
+}
+.mg-bg-color-dark {
+  background-color: var(--mg-color-dark-common);
+}
+.mg-border-color-dark {
+  border-color: var(--mg-color-dark-common);
+}
+.mg-fill-color-dark {
+  fill: var(--mg-color-dark-common);
+}
+.mg-stroke-color-dark {
+  stroke: var(--mg-color-dark-common);
+}
+
+.mg-font-size-xs {
+  font-size: var(--mg-font-size-xs);
+}
+.mg-font-size-sm {
+  font-size: var(--mg-font-size-sm);
+}
+.mg-font-size-md {
+  font-size: var(--mg-font-size-md);
+}
+.mg-font-size-lg {
+  font-size: var(--mg-font-size-lg);
+}
+
+.mg-font-family-base {
+  font-family: var(--mg-font-family-base);
+}
+.mg-font-family-mono {
+  font-family: var(--mg-font-family-mono);
+}
+
+.mg-shadow-sm {
+  box-shadow: var(--mg-shadow-sm);
+}
+.mg-shadow-md {
+  box-shadow: var(--mg-shadow-md);
+}
+.mg-shadow-lg {
+  box-shadow: var(--mg-shadow-lg);
+}
+.mg-shadow-xl {
+  box-shadow: var(--mg-shadow-xl);
+}
+
+.mg-m-sm {
+  margin: var(--mg-space-sm);
+}
+.mg-p-sm {
+  padding: var(--mg-space-sm);
+}
+.mg-m-top-sm {
+  margin-top: var(--mg-space-sm);
+}
+.mg-p-top-sm {
+  padding-top: var(--mg-space-sm);
+}
+.mg-m-right-sm {
+  margin-right: var(--mg-space-sm);
+}
+.mg-p-right-sm {
+  padding-right: var(--mg-space-sm);
+}
+.mg-m-bottom-sm {
+  margin-bottom: var(--mg-space-sm);
+}
+.mg-p-bottom-sm {
+  padding-bottom: var(--mg-space-sm);
+}
+.mg-m-left-sm {
+  margin-left: var(--mg-space-sm);
+}
+.mg-p-left-sm {
+  padding-left: var(--mg-space-sm);
+}
+.mg-m-md {
+  margin: var(--mg-space-md);
+}
+.mg-p-md {
+  padding: var(--mg-space-md);
+}
+.mg-m-top-md {
+  margin-top: var(--mg-space-md);
+}
+.mg-p-top-md {
+  padding-top: var(--mg-space-md);
+}
+.mg-m-right-md {
+  margin-right: var(--mg-space-md);
+}
+.mg-p-right-md {
+  padding-right: var(--mg-space-md);
+}
+.mg-m-bottom-md {
+  margin-bottom: var(--mg-space-md);
+}
+.mg-p-bottom-md {
+  padding-bottom: var(--mg-space-md);
+}
+.mg-m-left-md {
+  margin-left: var(--mg-space-md);
+}
+.mg-p-left-md {
+  padding-left: var(--mg-space-md);
+}
+.mg-m-lg {
+  margin: var(--mg-space-lg);
+}
+.mg-p-lg {
+  padding: var(--mg-space-lg);
+}
+.mg-m-top-lg {
+  margin-top: var(--mg-space-lg);
+}
+.mg-p-top-lg {
+  padding-top: var(--mg-space-lg);
+}
+.mg-m-right-lg {
+  margin-right: var(--mg-space-lg);
+}
+.mg-p-right-lg {
+  padding-right: var(--mg-space-lg);
+}
+.mg-m-bottom-lg {
+  margin-bottom: var(--mg-space-lg);
+}
+.mg-p-bottom-lg {
+  padding-bottom: var(--mg-space-lg);
+}
+.mg-m-left-lg {
+  margin-left: var(--mg-space-lg);
+}
+.mg-p-left-lg {
+  padding-left: var(--mg-space-lg);
+}
+.mg-m-xl {
+  margin: var(--mg-space-xl);
+}
+.mg-p-xl {
+  padding: var(--mg-space-xl);
+}
+.mg-m-top-xl {
+  margin-top: var(--mg-space-xl);
+}
+.mg-p-top-xl {
+  padding-top: var(--mg-space-xl);
+}
+.mg-m-right-xl {
+  margin-right: var(--mg-space-xl);
+}
+.mg-p-right-xl {
+  padding-right: var(--mg-space-xl);
+}
+.mg-m-bottom-xl {
+  margin-bottom: var(--mg-space-xl);
+}
+.mg-p-bottom-xl {
+  padding-bottom: var(--mg-space-xl);
+}
+.mg-m-left-xl {
+  margin-left: var(--mg-space-xl);
+}
+.mg-p-left-xl {
+  padding-left: var(--mg-space-xl);
+}

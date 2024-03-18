@@ -1,12 +1,7 @@
 import { TokenBase } from "../../types";
 
-export const generateFontSizeCss = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  fontSize: NonNullable<
-    TokenBase<ColorCode, Semantics>["font"]
-  >["size"] = {},
+export const generateFontSizeCss = async (
+  fontSize: NonNullable<TokenBase["font"]>["size"] = {},
 ) => {
   const content = Object.entries(fontSize)
     .flatMap(([key]) => {

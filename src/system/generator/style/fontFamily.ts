@@ -1,12 +1,7 @@
 import { TokenBase } from "../../types";
 
-export const generateFontFamilyCss = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  fontFamily: NonNullable<
-    TokenBase<ColorCode, Semantics>["font"]
-  >["family"] = {},
+export const generateFontFamilyCss = async (
+  fontFamily: NonNullable<TokenBase["font"]>["family"] = {},
 ) => {
   const content = Object.entries(fontFamily)
     .flatMap(([key]) => {

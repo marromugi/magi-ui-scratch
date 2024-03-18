@@ -1,17 +1,12 @@
 import { TokenBase } from "../../types";
 
-export const generateFontType = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  tokens: TokenBase<ColorCode, Semantics>,
-) => {
+export const generateFontType = async (tokens: TokenBase) => {
   return Object.entries(tokens.font ?? {}).flatMap(
     ([name, codes]) => {
       return [
-        `${name}: {`,
+        `"${name}": {`,
         ...Object.entries(codes).map(([code]) => {
-          return `${code}: string;`;
+          return `"${code}": string;`;
         }),
         `};`,
       ];

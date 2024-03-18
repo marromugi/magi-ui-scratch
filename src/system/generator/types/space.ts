@@ -1,12 +1,7 @@
 import { TokenBase } from "../../types";
 
-export const generateSpaceType = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  tokens: TokenBase<ColorCode, Semantics>,
-) => {
+export const generateSpaceType = async (tokens: TokenBase) => {
   return Object.entries(tokens.space ?? {}).flatMap(([name]) => {
-    return [`${name}: string | number;`];
+    return [`"${name}": string | number;`];
   });
 };

@@ -10,12 +10,20 @@ import {
   generateFontFamilyCss,
   generateShadowCss,
   generateSpaceCss,
+  generateFontTrackingCss,
+  generateFontLineSpaceCss,
+  generateRadiusCss,
+  generateTransitionCss,
+  generateTimingCss,
 } from "./generator/style";
 import {
   generateColorType,
   generateFontType,
+  generateRadiusType,
   generateShadowType,
   generateSpaceType,
+  generateTimingType,
+  generateTransitionType,
 } from "./generator/types";
 import { TokenBase } from "./types";
 import {
@@ -33,36 +41,46 @@ const FORMAT: prettier.Options = {
   endOfLine: "lf",
 };
 
-export const defineConfig = <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  token: TokenBase<ColorCode, Semantics>,
-) => {
+export const defineConfig = (token: TokenBase) => {
   return token;
 };
 
-export const generateTypes = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  tokens: TokenBase<ColorCode, Semantics>,
+export const generateTypes = async (
+  tokens: TokenBase,
   outDir: string = "./",
 ) => {
   const color = withType("Color", await generateColorType(tokens));
   const font = withType("Font", await generateFontType(tokens));
   const shadow = withType("Shadow", await generateShadowType(tokens));
   const space = withType("Space", await generateSpaceType(tokens));
+  const radius = withType("Radius", await generateRadiusType(tokens));
+  const transition = withType(
+    "Transition",
+    await generateTransitionType(tokens),
+  );
+  const timing = withType("Timing", await generateTimingType(tokens));
 
   const token = withType("Token", [
     "color: Color;",
     "font: Font;",
     "shadow: Shadow;",
     "space: Space;",
+    "radius: Radius;",
+    "transition: Transition;",
+    "timing: Timing;",
   ]);
 
   const formattedContent = await prettier.format(
-    withModule([color, font, shadow, space, token]),
+    withModule([
+      color,
+      font,
+      shadow,
+      space,
+      token,
+      radius,
+      transition,
+      timing,
+    ]),
     {
       ...FORMAT,
       parser: "typescript",
@@ -75,11 +93,8 @@ export const generateTypes = async <
   );
 };
 
-export const generateCss = async <
-  ColorCode extends number,
-  Semantics extends string,
->(
-  tokens: TokenBase<ColorCode, Semantics>,
+export const generateCss = async (
+  tokens: TokenBase,
   outDir: string = "./",
 ) => {
   const css: string[] = [];
@@ -100,9 +115,14 @@ export const generateCss = async <
     css.push(await generateColorCss(tokens.color, "common"));
   }
   css.push(await generateFontSizeCss(tokens.font?.size));
+  css.push(await generateFontTrackingCss(tokens.font?.tracking));
+  css.push(await generateFontLineSpaceCss(tokens.font?.lineSpace));
   css.push(await generateFontFamilyCss(tokens.font?.family));
   css.push(await generateShadowCss(tokens.shadow));
   css.push(await generateSpaceCss(tokens.space));
+  css.push(await generateRadiusCss(tokens.radius));
+  css.push(await generateTransitionCss(tokens.transition));
+  css.push(await generateTimingCss(tokens.timing));
 
   const formattedCss = await prettier.format(css.join("\n\n"), {
     ...FORMAT,
